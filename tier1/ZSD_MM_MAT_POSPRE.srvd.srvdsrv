@@ -1,0 +1,4 @@
+@EndUserText.label: 'Reporte Material - Pospre'
+define service ZSD_MM_MAT_POSPRE {
+  expose ZC_MM_MatPospre as MaterialPospre;
+}

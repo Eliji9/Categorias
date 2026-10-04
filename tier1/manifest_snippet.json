@@ -1,0 +1,28 @@
+{
+  "_comentario": "Fragmento para webapp/manifest.json de la app Fiori Elements V4 (List Report). Reemplaza la validación 'Debe colocar al menos un criterio de búsqueda': no se consulta hasta que el usuario presione Ir.",
+  "sap.ui5": {
+    "routing": {
+      "targets": {
+        "MaterialPospreList": {
+          "options": {
+            "settings": {
+              "contextPath": "/MaterialPospre",
+              "initialLoad": "Disabled",
+              "variantManagement": "Page",
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "GridTable",
+                    "selectionMode": "None",
+                    "enableExport": true,
+                    "condensedTableLayout": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+//---------------------------------------------------------------------
+// Metadata Extension - Anotaciones UI (Fiori Elements V4 List Report)
+// Orden de filtros y columnas = pantalla/ALV del reporte original
+// (sin "Última modificación")
+//---------------------------------------------------------------------
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName:       'Material - Pospre',
+    typeNamePlural: 'Reporte Material - Pospre',
+    title:          { type: #STANDARD, value: 'Product' },
+    description:    { type: #STANDARD, value: 'ProductDescription' }
+  },
+  presentationVariant: [{
+    sortOrder:      [ { by: 'Product',       direction: #ASC },
+                      { by: 'ValuationArea', direction: #ASC } ],
+    visualizations: [ { type: #AS_LINEITEM } ]
+  }]
+}
+annotate entity ZC_MM_MatPospre with
+{
+  @UI.facet: [
+    { id: 'Material',  purpose: #STANDARD, type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'Material',  label: 'Material',                    position: 10 },
+    { id: 'Contable',  purpose: #STANDARD, type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'Contable',  label: 'Contabilidad y presupuesto',  position: 20 }
+  ]
+
+  // ---------------- Filtros (pantalla de selección) ----------------
+  @UI: { selectionField: [{ position: 10 }],
+         lineItem:       [{ position: 10,  importance: #HIGH }],
+         fieldGroup:     [{ qualifier: 'Material', position: 10 }] }
+  Product;
+
+  @UI: { lineItem:       [{ position: 20,  importance: #HIGH }],
+         fieldGroup:     [{ qualifier: 'Material', position: 20 }] }
+  ProductDescription;
+
+  @UI: { selectionField: [{ position: 20 }],
+         lineItem:       [{ position: 30,  importance: #HIGH }],
+         fieldGroup:     [{ qualifier: 'Material', position: 30 }] }
+  ValuationArea;
+
+  @UI: { selectionField: [{ position: 30 }],
+         lineItem:       [{ position: 40,  importance: #HIGH }],
+         fieldGroup:     [{ qualifier: 'Material', position: 40 }] }
+  ValuationClass;
+
+  @UI: { selectionField: [{ position: 40 }],
+         lineItem:       [{ position: 50,  importance: #HIGH }],
+         fieldGroup:     [{ qualifier: 'Contable', position: 10 }] }
+  CommitmentItem;
+
+  @UI: { lineItem:       [{ position: 60,  importance: #MEDIUM }],
+         fieldGroup:     [{ qualifier: 'Contable', position: 20 }] }
+  CommitmentItemName;
+
+  @UI: { selectionField: [{ position: 50 }],
+         lineItem:       [{ position: 70,  importance: #HIGH }],
+         fieldGroup:     [{ qualifier: 'Contable', position: 30 }] }
+  GLAccount;
+
+  @UI: { lineItem:       [{ position: 80,  importance: #LOW }],
+         fieldGroup:     [{ qualifier: 'Material', position: 50 }] }
+  IsMarkedForDeletionAtPlant;
+
+  @UI: { selectionField: [{ position: 60 }],
+         lineItem:       [{ position: 90,  importance: #MEDIUM }],
+         fieldGroup:     [{ qualifier: 'Material', position: 60 }] }
+  ProductType;
+
+  @UI: { lineItem:       [{ position: 100, importance: #MEDIUM }],
+         fieldGroup:     [{ qualifier: 'Material', position: 70 }] }
+  ProductTypeName;
+
+  @UI: { lineItem:       [{ position: 110, importance: #MEDIUM }],
+         fieldGroup:     [{ qualifier: 'Material', position: 80 }] }
+  ProductGroup;
+
+  @UI: { lineItem:       [{ position: 120, importance: #MEDIUM }],
+         fieldGroup:     [{ qualifier: 'Material', position: 90 }] }
+  ProductGroupText;
+
+  @UI: { lineItem:       [{ position: 130, importance: #MEDIUM }],
+         fieldGroup:     [{ qualifier: 'Contable', position: 40 }] }
+  GLAccountLongName;
+
+  @UI: { lineItem:       [{ position: 140, importance: #MEDIUM }],
+         fieldGroup:     [{ qualifier: 'Contable', position: 50 }] }
+  GLAccountGroupName;
+
+  @UI: { lineItem:       [{ position: 150, importance: #HIGH }],
+         fieldGroup:     [{ qualifier: 'Contable', position: 60 }] }
+  AS400Account;
+
+  // ---------------- Técnicos ----------------
+  @UI: { fieldGroup: [{ qualifier: 'Contable', position: 70 }] }
+  CompanyCode;
+
+  @UI: { fieldGroup: [{ qualifier: 'Contable', position: 80 }] }
+  ChartOfAccounts;
+}
