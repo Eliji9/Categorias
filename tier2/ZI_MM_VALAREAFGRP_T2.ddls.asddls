@@ -11,7 +11,7 @@
   sizeCategory:   #S,
   dataClass:      #CUSTOMIZING
 }
-define view entity ZI_MM_ValAreaGrp_T2
+define view entity ZI_MM_ValAreaFGrp_T2
   as select from t001k
 {
   key bwkey as ValuationArea,

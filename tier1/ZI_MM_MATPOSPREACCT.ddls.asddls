@@ -31,7 +31,7 @@ define view entity ZI_MM_MatPospreAcct
       on Product.Product = Valuation.Product
 
   // T001K
-    left outer join ZI_MM_ValAreaGrp_T2        as ValArea
+    left outer join ZI_MM_ValAreaFGrp_T2        as ValArea
       on ValArea.ValuationArea = Valuation.ValuationArea
 
   // T001

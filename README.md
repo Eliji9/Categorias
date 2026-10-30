@@ -4,7 +4,7 @@
 
 | Capa | Objeto | Tipo |
 |---|---|---|
-| Tier 2 (Standard ABAP, liberado C1) | ZI_MM_ValAreaGrp_T2 | CDS View Entity sobre T001K |
+| Tier 2 (Standard ABAP, liberado C1) | ZI_MM_ValAreaFGrp_T2 | CDS View Entity sobre T001K |
 | Tier 2 | ZI_FI_AutoAcctDet_T2 | CDS View Entity sobre T030 |
 | Tier 2 | ZI_FI_GLAcctCmmtItem_T2 | CDS View Entity sobre SKB1 (FIPOS) |
 | Tier 2 | ZI_PSM_CmmtItemText_T2 | CDS View Entity sobre FMCIT |
@@ -38,7 +38,7 @@ Para tablas, el patrón Tier 2 recomendado por SAP es una vista CDS liberada con
 | MARC | I_ProductPlantBasic | IsMarkedForDeletion |
 | T134T | I_ProductTypeText_2 | ProductTypeName |
 | T023T | I_ProductGroupText_2 | ProductGroupText (WGBEZ60) |
-| T001K | ZI_MM_ValAreaGrp_T2 | CompanyCode, ValuationGroupingCode |
+| T001K | ZI_MM_ValAreaFGrp_T2 | CompanyCode, ValuationGroupingCode |
 | T001 | I_CompanyCode | ChartOfAccounts, FinancialManagementArea |
 | T030 | ZI_FI_AutoAcctDet_T2 | GLAccount (KONTS) – filtro KTOSL = 'GBB' |
 | SKB1 | ZI_FI_GLAcctCmmtItem_T2 | CommitmentItem (FIPOS) |
@@ -93,7 +93,7 @@ filtro como `@Consumption.filter.mandatory: true`.
 
 | # | Objeto | Paquete | Depende de |
 |---|---|---|---|
-| 1 | ZI_MM_VALAREAGRP_T2 | Standard ABAP | T001K |
+| 1 | ZI_MM_VALAREAFGRP_T2 | Standard ABAP | T001K |
 | 2 | ZI_FI_AUTOACCTDET_T2 | Standard ABAP | T030 |
 | 3 | ZI_FI_GLACCTCMMTITEM_T2 | Standard ABAP | SKB1 |
 | 4 | ZI_PSM_CMMTITEMTEXT_T2 | Standard ABAP | FMCIT |
