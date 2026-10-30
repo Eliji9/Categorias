@@ -65,6 +65,12 @@ define root view entity ZC_MM_MatPospre
       @EndUserText.label: 'Cuenta AS400'
       AS400Account,
 
+      @EndUserText.label: 'Clase activo fijo'
+      AssetClass,
+
+      @EndUserText.label: 'Determ. cuentas AF'
+      AssetAccountDetermination,
+
       @EndUserText.label: 'Sociedad'
       CompanyCode,
 

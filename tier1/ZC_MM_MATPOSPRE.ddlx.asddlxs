@@ -93,10 +93,17 @@ annotate entity ZC_MM_MatPospre with
          fieldGroup:     [{ qualifier: 'Contable', position: 60 }] }
   AS400Account;
 
-  // ---------------- Técnicos ----------------
+  // ---------------- Activo fijo (solo RACF) ----------------
   @UI: { fieldGroup: [{ qualifier: 'Contable', position: 70 }] }
-  CompanyCode;
+  AssetClass;
 
   @UI: { fieldGroup: [{ qualifier: 'Contable', position: 80 }] }
+  AssetAccountDetermination;
+
+  // ---------------- Técnicos ----------------
+  @UI: { fieldGroup: [{ qualifier: 'Contable', position: 90 }] }
+  CompanyCode;
+
+  @UI: { fieldGroup: [{ qualifier: 'Contable', position: 100 }] }
   ChartOfAccounts;
 }
